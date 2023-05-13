@@ -1,0 +1,31 @@
+Tailwind :
+ npm install tailwindcss 
+ npx tailwindcss init
+    /** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+impornt tailwind in index.js :
+    import 'tailwindcss/tailwind.css';
+
+
+
+
+
+
+API url :
+
+https://api.themoviedb.org/3/movie/popular?api_key=fc933f3e9bcd8a0b1682223d6f45e624
+
+
+https://api.themoviedb.org/3/trending/${mediaType}/week?api_key=fc933f3e9bcd8a0b1682223d6f45e624
+
+movie - tv - person
+
