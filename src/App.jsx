@@ -9,6 +9,7 @@ import Register from './Components/Register/Register'
 import Login from './Components/Login/Login'
 import { useState } from 'react';
 import Footer from './Components/Footer/Footer';
+import  {DataContextProvider}  from './DataContext';
 
 
 function App() {
@@ -35,17 +36,21 @@ function App() {
     <div className="min-h-[100vh] relative">
 
       <Navbar loginUser={loginUser}  logout={logout}/>
-
+      
+      <DataContextProvider> 
       <Routes>
       <Route path='/home' element={<Home/>} />
       <Route path='/tv' element={<Tv />} />  
       <Route path='/movies' element={<Movies/>} />
       <Route path='/gallery' element={<Gallery/>} /> 
+      </Routes>
+      </DataContextProvider>
+
+     <Routes>
       <Route path='/register' element={<Register/>} /> 
       <Route path='/login' element={<Login setUser={setUser}/> } />  
       <Route path="/" element={<Navigate replace to= {loginUser !== null ?"/home" : "/login" }   />} />
       </Routes>
-     
     <Footer/>
       
     </div>

@@ -1,37 +1,14 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+
+import React, { useContext} from 'react'
+import { DataContext } from '../../DataContext';
 
 
 
 export default function Movies() {
 
-  let [movies , setMovie] = useState([]);
 
-
+  let {movies} = useContext(DataContext);
   let imagePrefix = 'https://image.tmdb.org/t/p/w500';
-
-  async function getData(){
-try {
-  
-  let {data} = await axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=fc933f3e9bcd8a0b1682223d6f45e624`);
-
-
-  console.log(data);
-  setMovie(data.results.slice(0,));
-
-} catch (error) {
-  console.log(error);
-}
-   
-   
-
-  }
-  
-  
-  useEffect(()=>{
-    getData();
-  },[]) //component did mount
-
 
 
   return (
