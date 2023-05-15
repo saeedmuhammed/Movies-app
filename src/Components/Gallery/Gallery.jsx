@@ -23,7 +23,7 @@ export default function Gallery() {
           <hr className='w-[120px] m-auto mt-2' />
          
          
-    <div className='grid grid-cols-5 mx-auto max-w-7xl gap-5 py-12'>
+    <div className='grid lg:grid-cols-5 md:grid-cols-4 mx-auto max-w-7xl gap-5 py-12'>
      {actors.map((actor , index)=><div key={index} className='' > 
       <img src={imagePrefix+actor.profile_path} alt={actor.name} className='cursor-pointer' />
       <h1 className='cursor-pointer text-md text-center pt-2'> {actor.name} </h1>  

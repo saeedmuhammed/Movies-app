@@ -10,6 +10,7 @@ import Login from './Components/Login/Login'
 import { useState } from 'react';
 import Footer from './Components/Footer/Footer';
 import  {DataContextProvider}  from './DataContext';
+import MovieDetails from './Components/MovieDetails/MovieDetails';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
 
      <Routes>
       <Route path='/register' element={<Register/>} /> 
+      <Route path='/home/movieDetails' element={<MovieDetails />} />
       <Route path='/login' element={<Login setUser={setUser}/> } />  
       <Route path="/" element={<Navigate replace to= {loginUser !== null ?"/home" : "/login" }   />} />
       </Routes>
