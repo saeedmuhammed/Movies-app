@@ -28,7 +28,7 @@ export default function Movies() {
           <hr className='w-[120px] m-auto mt-2' />
          
          
-    <div className='grid lg:grid-cols-5 md:grid-cols-4 mx-auto max-w-7xl gap-5 py-12'>
+    <div className='grid sm:grid-cols-2 lg:grid-cols-5 md:grid-cols-4 mx-auto max-w-7xl gap-5 py-12'>
      {movies.map((movie , index)=><div  onClick={()=>showDetails('movie',movie.id)} key={index} className='' > 
       <img src={imagePrefix+movie.poster_path} alt={movie.title} className='cursor-pointer' />
       <h1 className='cursor-pointer text-md text-center pt-2'> {movie.title} </h1>  

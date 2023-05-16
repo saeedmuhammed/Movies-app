@@ -22,7 +22,7 @@ let imagePrefix = 'https://image.tmdb.org/t/p/w500';
 
    <div className='pb-20'> 
 
-   <div className='grid lg:grid-cols-6 md:grid-cols-4 mx-auto max-w-7xl gap-5 py-12'>
+   <div className='grid sm:grid-cols-3 lg:grid-cols-6 md:grid-cols-4 mx-auto max-w-7xl gap-5 py-12'>
       <div className='col-span-2 text-left'>
          <hr className='mb-2' />
          <h1 className='text-5xl  leading-[60px] sm:text-center lg:text-left'> Trending Movies  <br/> To Watch <br/> Right Now</h1>
@@ -37,7 +37,7 @@ let imagePrefix = 'https://image.tmdb.org/t/p/w500';
 
 
     </div>
-    <div className='grid lg:grid-cols-6 md:grid-cols-4 mx-auto max-w-7xl gap-5 py-12'>
+    <div className='grid sm:grid-cols-3 lg:grid-cols-6 md:grid-cols-4 mx-auto max-w-7xl gap-5 py-12'>
       <div className='col-span-2 text-left order-last'>
          <hr className='mb-2' />
          <h1 className='text-5xl leading-[60px] sm:text-center lg:text-left'> Trending Series <br/> To Watch <br/> Right Now</h1>
@@ -52,7 +52,7 @@ let imagePrefix = 'https://image.tmdb.org/t/p/w500';
 
 
     </div>
-    <div className='grid lg:grid-cols-6 md:grid-cols-4 mx-auto max-w-7xl gap-5 py-12'>
+    <div className='grid  sm:grid-cols-3 lg:grid-cols-6 md:grid-cols-4 mx-auto max-w-7xl gap-5 py-12'>
       <div className='col-span-2 text-left'>
          <hr className='mb-2' />
          <h1 className='text-5xl leading-[60px] sm:text-center lg:text-left'> Trending Actors <br/> To Know <br/> Right Now</h1>

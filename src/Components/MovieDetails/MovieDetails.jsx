@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import style from './MovieDetails.module.css'
-import img from '../../images/wallpaperflare.com_wallpaper.jpg'
 import { Link, useLocation } from 'react-router-dom'
 import axios from 'axios';
 
@@ -20,33 +19,47 @@ export default function MovieDetails() {
     
     async function getData (type , id) {
 
-        let {data} = await axios.get(`https://api.themoviedb.org/3/${type}/${id}?api_key=fc933f3e9bcd8a0b1682223d6f45e624`);
-        if (type === 'movie') {
-            let {genres,original_title,overview,vote_count , backdrop_path}= data;
-            setName(original_title);
-            setOverview(overview);
-            setCategory(genres);
-            setReview(vote_count);
-            setImage(backdrop_path);
-         
-        }   
-        else {
-            let {genres,original_name,overview,vote_count , backdrop_path}= data;
-            setName(original_name);
-            setOverview(overview);
-            setCategory(genres);
-            setReview(vote_count);
-            setImage(backdrop_path);
-        
-        }  
-       
+        try {
+
+            let {data} = await axios.get(`https://api.themoviedb.org/3/${type}/${id}?api_key=fc933f3e9bcd8a0b1682223d6f45e624`);
+            if (type === 'movie') {
+                let {genres,original_title,overview,vote_count , backdrop_path}= data;
+                setName(original_title);
+                setOverview(overview);
+                setCategory(genres);
+                setReview(vote_count);
+                setImage(backdrop_path);
+             
+            }   
+            else {
+                let {genres,original_name,overview,vote_count , backdrop_path}= data;
+                setName(original_name);
+                setOverview(overview);
+                setCategory(genres);
+                setReview(vote_count);
+                setImage(backdrop_path);
+            
+            }  
+           
+            
+        } catch (error) {
+            
+        }
+     
 
     }
     async function getImages(type ,id){
 
-        let{data} = await axios.get(`https://api.themoviedb.org/3/${type}/${id}/images?api_key=fc933f3e9bcd8a0b1682223d6f45e624`)
-        let images =data.backdrops.slice(0,3); 
-        setImages(images);
+        try {
+            
+            let{data} = await axios.get(`https://api.themoviedb.org/3/${type}/${id}/images?api_key=fc933f3e9bcd8a0b1682223d6f45e624`)
+            let images =data.backdrops.slice(0,3); 
+            setImages(images);
+
+        } catch (error) {
+            console.log(error);
+        }
+       
         
     }
 
@@ -56,7 +69,7 @@ export default function MovieDetails() {
         getData( location.state.type ,location.state.id);
         getImages(location.state.type , location.state.id);
         
-    } ,[]);
+    } ,);
 
 
     return (

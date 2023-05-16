@@ -31,7 +31,7 @@ export default function Navbar(props) {
    
     </div>
     <div className='flex '>
-      <div className='mr-3 sm:hidden md:flex'>
+      <div className='mr-3 xs:hidden md:flex '>
         {props.loginUser !== null ? <h4 className='inline mr-5 '>Hello!  {props.loginUser.name} </h4>  :''}
         <a href="http://google.com"><i className="fa-brands fa-facebook px-2"></i></a>
         <a href="http://google.com"><i className="fa-brands fa-twitter px-2"></i></a>

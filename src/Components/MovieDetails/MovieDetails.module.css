@@ -63,13 +63,24 @@ cursor: pointer;
     .images {
         display: none;
     }
-
+  
+    .details  {
+        width: 80%;
+        
+    }
+    .details h1 {
+        font-size: 30px;
+    }
 }
 
 
 @media (max-width: 1023px)  {
     .images {
         display: none;
+    }
+    .details  {
+        width: 80%;
+        
     }
 
 }
