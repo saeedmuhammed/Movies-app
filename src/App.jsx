@@ -44,16 +44,15 @@ function App() {
       <Route path='/tv' element={<Tv />} />  
       <Route path='/movies' element={<Movies/>} />
       <Route path='/gallery' element={<Gallery/>} /> 
-      </Routes>
-      </DataContextProvider>
-
-     <Routes>
       <Route path='/register' element={<Register/>} /> 
       <Route path='/home/movieDetails' element={<MovieDetails />} />
       <Route path='/login' element={<Login setUser={setUser}/> } />  
-      <Route path="/" element={<Navigate replace to= {loginUser !== null ?"/home" : "/login" }   />} />
+      <Route path="*" element={<Navigate replace to= {loginUser !== null ?"/home" : "/login" }   />} />
+      
       </Routes>
-    <Footer/>
+      </DataContextProvider>
+
+     <Footer/>
       
     </div>
   );
